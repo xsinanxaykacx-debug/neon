@@ -2196,7 +2196,7 @@ async def iddaa_bahis_oranlari_async(basla, son):
     kalici_hata_idler = set()
 
     print("=" * 76)
-    print(f"Maçkolik ARŞİV v15.11: {basla} → {son}")
+    print(f"Maçkolik ARŞİV v15.12: {basla} → {son}")
     print(f"Grup: {AKTIF_ETIKET}  ({', '.join(AKTIF_GRUPLAR)})")
     print(f"Eşzamanlı: {ESZAMANLI_ISTEK} | Min istek: {MIN_ISTEK_ARASI}s | "
           f"Jitter: {ISTEK_JITTER_ASYNC}s")
@@ -2739,7 +2739,7 @@ def _gruplari_coz(grup_str):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Maçkolik arşiv çekimi (v15.11)")
+    parser = argparse.ArgumentParser(description="Maçkolik arşiv çekimi (v15.12)")
     parser.add_argument("--grup", "-g", default=None)
     parser.add_argument("--excel", action="store_true")
     args = parser.parse_args()
