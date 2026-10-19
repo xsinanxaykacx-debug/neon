@@ -814,11 +814,11 @@ async def istek_yap_async(url, params=None, livedata=False, max_retries=6):
                 async with _lock_al():
                     simdi = time.time()
                     if _warp_reset_in_progress:
+                        # Bir sonraki döngünün ilk throttle kontrolü bekletecek.
                         rezerve_edildi = False
-                        ikinci_bekleme = 1.0
                     elif simdi < _global_cooldown_until:
+                        # Cooldown beklemesini tek yerden yönet: ilk throttle kontrolü.
                         rezerve_edildi = False
-                        ikinci_bekleme = min(_global_cooldown_until - simdi, 3.0)
                     else:
                         # Event loop uzun süre bloklanırsa birden çok rezervasyon
                         # aynı anda uyanabilir. Fiilî başlangıç saati bu çakışmayı önler.
